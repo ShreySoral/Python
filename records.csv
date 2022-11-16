@@ -1,8 +1,10 @@
- """Name,Maths,Chemistry,Physics
+Name,Maths,Chemistry,Physics
 Sachin,80,70,60
 Rajat,80,80,80
 Simran,50,70,80
 Ravi,60,70,90
-Shivani,80,60,70"""
+Shivani,80,60,70
 Gaurav,78,88,66
-Vijay,88,89,87
+vijay,88,89,87
+sachin,90,100,100
+Aditya,80,90,90
