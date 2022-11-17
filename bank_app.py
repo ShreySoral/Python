@@ -10,39 +10,42 @@
 from getpass import getpass
 import os
 import time
+import json
 
-database = {
-    1001: {
-        "name": "sachin",
-        "balance": 60000,
-        "password": "redhat",
-    },
-    1002: {
-        "name": "rajat",
-        "balance": 80000,
-        "password": "asimov",
-    }
-}
-
+def get_last_acc_number():
+    with open("last_account.json", "r") as fp:
+        acc = json.load(fp)
+    return acc
+def update_last_acc_number(acc):
+    with open("last_account.json", "w") as fp:
+        json.dump(acc, fp)
+        
+def create_new_account(record):
+    old = get_last_acc_number()
+    new = old+1
+    update_last_acc_number(new)
+    with open(f"accounts/{new}", "w") as fp:
+        json.dump(record, fp)
+    return new
 
 def signup():
     """
         ask user for details and create a new account
     """
-    global database
     name = input("name: ").strip().lower()
     balance = float(input("balance: "))
     password = getpass("Password: ")
-
-    new_acc =  max(database.keys())+1
-    print(f"New Account Created! note account number {new_acc}")
-
-    database[new_acc] = {
+    record = {
         "name": name,
         "balance": balance,
         "password": password,
     }
 
+    new_acc =  create_new_account(record)
+    
+    print(f"New Account Created! note account number {new_acc}")
+
+    
 def login():
     """
         will try to logged in a user
