@@ -1,34 +1,41 @@
-import unittest
-import unittest
-import main
+#import my_module
+#import matplotlib.pyplot as plt
+# plt.plot(?)
 
-class testmain(unittest.TestCase):
-    def test_do_stuff(self):
-        num=10
-        result=main.do_stuff(num)
-        self.assertEqual(result,15)
+from my_module import *
 
-    def test_do_stuff1(self):
-        param='ssss'
-        result=main.do_stuff(param)
-        self.assertIsInstance(result,ValueError)
+greet("Sachin")
 
-    def test_do_stuff2(self):
-        testp=None
-        r=main.do_stuff(testp)
-        self.assertEqual(r,'please enter a number')
-    def test_do_stuff3(self):
-        tp=''
-        r1=main.do_stuff(tp)
-        self.assertEqual(r1,'please enter a number')
+laugh()
 
-    # def test_do_stuff(self):
-    #     parameter=0
-    #     res=main.do_stuff(parameter)
-    #     self.assertIsNone(res,ValueError)
-    # def test_do_stuff(self):
-    #     p={'zvi':999}
-    #     resultis=main.do_stuff(p)
-    #     self.assertNotEqual(resultis)
-if __name__=='__main__':
-    unittest.main()
+cry()
+
+x = A()
+
+x.hello()
+
+
+# import my_module as m
+# from my_module import greet, A
+# # print("now we can use my_module")
+# # print("functions, classes or global variables")
+# # print("here in test.py file")
+
+# from my_module import cry as rona
+# m.laugh()
+
+
+# rona()
+
+# x = A()
+# x.hello()
+
+# for name in ["ram", "hari", "shyam"]:
+#     #my_module.greet(name)
+#     greet(name)
+
+# # import random
+# # rnum = random.randint(1, 100)
+
+# # from random import randint
+# # rnum = randint(1, 100)
